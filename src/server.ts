@@ -3,11 +3,13 @@ import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/
 import { z } from "zod";
 import { ChainActivity, HolderInfo, HolderStatCounts } from "./types";
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 
-// const API_URL = "https://api.activity.stablecoin.xyz/v1";
 const API_URL = process.env.API_URL || "http://localhost:3000/v1/api";
 const API_KEY = process.env.API_KEY || "apikey";
 
@@ -43,7 +45,7 @@ app.post('/', async (req: Request, res: Response) => {
 
 function getServer() {
   const server = new McpServer({
-    name: "sbc-tracker",
+    name: "sbc-activity-api",
     version: "1.0.0",
   });
 

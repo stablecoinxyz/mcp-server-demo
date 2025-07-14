@@ -1,8 +1,7 @@
 {
-  "name": "sbc-tracker-mcp",
+  "name": "mcp-server-demo",
   "version": "1.0.0",
-  "description": "SBC Tracker MCP",
-  "main": "index.js",
+  "description": "MCP Server Demo",
   "scripts": {
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts"
